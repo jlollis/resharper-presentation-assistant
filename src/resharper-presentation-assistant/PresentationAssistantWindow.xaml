@@ -9,7 +9,7 @@
         ShowActivated="False"
         ShowInTaskbar="False"
         Focusable="False"
-        Background="{DynamicResource {x:Static pa:PresentationAssistantThemeColor.PresentationAssistantWindowBackgroundBrushKey}}"
+        Background="Transparent"
         Foreground="{DynamicResource {x:Static pa:PresentationAssistantThemeColor.PresentationAssistantWindowForegroundBrushKey}}"
         FontSize="24"
         FontFamily="Segoe UI"
@@ -20,14 +20,15 @@
         Topmost="True"
         Opacity="0.8"
         d:DataContext="{x:Static pa:SampleData.MultiplierShortcut}">
+    <!-- Segoe UI originally -->
 
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
-        
+
         <Style TargetType="{x:Type TextBlock}">
             <Setter Property="VerticalAlignment" Value="Bottom" />
         </Style>
-        
+
         <Style x:Key="Keyboard" TargetType="ContentControl">
             <Setter Property="Margin" Value="0,0,3,0" />
             <Setter Property="FontFamily" Value="Arial" />
@@ -44,7 +45,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
         <Style x:Key="ShortcutDetailsItemsStyle" TargetType="ItemsControl">
             <Setter Property="ItemsPanel">
                 <Setter.Value>
@@ -89,10 +90,11 @@
         </DataTemplate>
     </Window.Resources>
 
-  <!-- Dark theme colours: Black border + #FF497549 background-->
-  <!-- Light theme colours: border? + #FFBAEEBA background -->
+    <!-- Dark theme colours: Black border + #FF497549 background-->
+    <!-- Light theme colours: border? + #FFBAEEBA background -->
 
-    <Border BorderThickness="1" BorderBrush="{DynamicResource {x:Static pa:PresentationAssistantThemeColor.PresentationAssistantWindowBorderBrushKey}}" Padding="10 5 10 5">
+    <Border BorderThickness="1" CornerRadius="8,8,8,8" BorderBrush="{DynamicResource {x:Static pa:PresentationAssistantThemeColor.PresentationAssistantWindowBorderBrushKey}}" Padding="10 5 10 5"
+            Background="{DynamicResource {x:Static pa:PresentationAssistantThemeColor.PresentationAssistantWindowBackgroundBrushKey}}">
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <!-- Don't mess with the formatting of the tags! -->
             <TextBlock Text="{Binding Path, Mode=OneTime}" />

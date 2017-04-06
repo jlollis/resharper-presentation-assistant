@@ -114,7 +114,7 @@ namespace JetBrains.ReSharper.Plugins.PresentationAssistant
 
         public override PopupWindowLayoutMode LayoutMode
         {
-            get { return layoutMode; }
+            get => layoutMode;
             set
             {
                 if (layoutMode == value)
